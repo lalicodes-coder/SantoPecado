@@ -25,12 +25,24 @@ class PostFactory extends Factory
                 'Tarta de Oreo',
                 'Pantera Rosa'
             ]),
+            'slug' => fake()->slug(),
+            'footer' => fake()->sentence(),
 
-            'description' => fake()->sentence(),
+            'description' => fake()->paragraphs(3, true),
+            'slice' => fake()->numberBetween(1, 5),
 
             'price' => fake()->numberBetween(15, 35),
 
-            'image_url' => fake()->imageUrl(400, 300, 'food', true)
+            'image_url' => function () {
+                $filename = fake()->uuid . '.jpg';
+
+                file_put_contents(
+                    storage_path('app/public/posts/' . $filename),
+                    file_get_contents('https://picsum.photos/400/300')
+                );
+
+                return 'posts/' . $filename;
+            }
         ];
     }
 }

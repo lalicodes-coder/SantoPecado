@@ -22,10 +22,7 @@
         {{ $slot }}
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-white text-center py-6 mt-10 text-gray-500">
-        <p>© {{ date('Y') }} Santo Pecado</p>
-    </footer>
-
+    <x-footer />
+    <x-whats-app-button />
 </body>
 </html>

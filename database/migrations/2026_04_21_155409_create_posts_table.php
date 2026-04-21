@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
+            $table->string('footer');
             $table->text('description');
+            $table->string('slice');
             $table->decimal('price', 8, 2);
             $table->string('image_url');
             $table->timestamps();

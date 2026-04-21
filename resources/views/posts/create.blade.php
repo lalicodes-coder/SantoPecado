@@ -12,8 +12,18 @@
             </div>
 
             <div class="mb-4">
+                <label for="footer" class="block text-gray-700 font-bold mb-2">Footer:</label>
+                <input type="text" name="footer" id="footer" class="w-full border border-gray-300 p-2 rounded-lg" required>
+            </div>
+
+            <div class="mb-4">
                 <label for="description" class="block text-gray-700 font-bold mb-2">Descripción:</label>
                 <textarea name="description" id="description" rows="5" class="w-full border border-gray-300 p-2 rounded-lg" required></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="slice" class="block text-gray-700 font-bold mb-2">Porciones:</label>
+                <input type="number" name="slice" id="slice" class="w-full border border-gray-300 p-2 rounded-lg" required>
             </div>
 
             <div class="mb-4">

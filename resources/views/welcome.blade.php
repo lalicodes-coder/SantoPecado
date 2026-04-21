@@ -16,28 +16,38 @@
 
     <!-- DESTACADAS -->
     <section class="px-10 py-16">
-        <h3 class="text-3xl font-bold text-center text-pink-400 mb-12">
-            Nuestras tentaciones
+
+        <h3 class="text-3xl font-bold text-center text-[#FACFDD] mb-12">
+            Nuestras últimas tartas 🍰
         </h3>
 
         <div class="grid md:grid-cols-3 gap-8">
 
-            <div class="bg-white rounded-2xl shadow-lg p-4 text-center hover:scale-105 transition">
-                <h4 class="text-xl font-semibold">Cheesecake</h4>
-                <p class="text-gray-500">Suave, cremosa… peligrosa</p>
-            </div>
+            @foreach($posts as $post)
 
-            <div class="bg-white rounded-2xl shadow-lg p-4 text-center hover:scale-105 transition">
-                <h4 class="text-xl font-semibold">Chocolate</h4>
-                <p class="text-gray-500">Para días tristes… o felices</p>
-            </div>
+                <div class="bg-white rounded-2xl shadow-lg p-4 text-center hover:scale-105 transition">
+                    <a href="{{ route('posts.show', $post) }}">
+                        <img src="{{ asset('storage/' . $post->image_url) }}" 
+                            class="w-full h-48 object-cover rounded-xl mb-4">
 
-            <div class="bg-white rounded-2xl shadow-lg p-4 text-center hover:scale-105 transition">
-                <h4 class="text-xl font-semibold">Fresa</h4>
-                <p class="text-gray-500">Dulce y bonita como tú</p>
-            </div>
+                        <h4 class="text-xl font-semibold">
+                            {{ $post->title }}
+                        </h4>
+
+                        <p class="text-gray-500">
+                            {{ Str::limit($post->description, 80) }}
+                        </p>
+
+                        <p class="text-[#FACFDD] font-bold mt-2">
+                            {{ $post->price }}€
+                        </p>
+                    </a>
+                </div>
+
+            @endforeach
 
         </div>
+
     </section>
 
     <!-- CTA -->

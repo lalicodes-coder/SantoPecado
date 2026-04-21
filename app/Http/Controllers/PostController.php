@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -16,10 +17,11 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
+            'footer' => 'required|string|max:255',
             'description' => 'required|string',
+            'slice' => 'required|numeric',
             'price' => 'required|numeric',
             'image_url' => 'required',
         ]);
@@ -36,9 +38,12 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+        if ($post->image_url) {
+            Storage::disk('public')->delete($post->image_url);
+        }
         $post->delete();
 
-        return redirect()->back()->with('success', 'Post deleted successfully!');
+        return redirect(route('posts.index'))->with('success', 'Post deleted successfully!');
     }
 
     public function update(Request $request, $id)
@@ -62,9 +67,8 @@ class PostController extends Controller
         return view('edit', compact('post'));
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
         return view('posts.show', compact('post'));
     }
 

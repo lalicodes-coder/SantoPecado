@@ -3,6 +3,9 @@
 ## COSAS HECHAS
 - [x] Navbar
 - [x] Layout
+- [x] Crear modelo tartas/posts
+- [x] Boton de whatsapp como componente
+- [x] Footer
 
 ---
 
@@ -16,7 +19,6 @@
 - [ ] Aplicar estilos base OSEA HACERLOS MAS BONITOS QUE SON HORRIBLES (Tailwind)
 - [ ] Cake Card (tarjeta de tarta)
 - [ ] Botón reutilizable
-- [ ] Footer como componente Y NAVBAR
 - [ ] Login
 - [ ] CRUD de tartas
 - [ ] Subida de imágenes
@@ -29,8 +31,10 @@
 - [ ] Crear formulario de pedido
 - [ ] Validación de datos
 - [ ] Guardar pedidos en BD
-- [ ] Botón WhatsApp directo
-- [ ] Crear modelo tartas/posts
+- [ ] Actualizar posts
+- [ ] Panel de administrador
+- [ ] PDFS
+- [ ] Logo
 
 ---
 

@@ -25,7 +25,7 @@
             <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
         </a>
 
-        <a href="#" class="relative group">
+        <a href="{{route('contacto')}}" class="relative group">
             <p class="text-[#FACFDD]">Contacto</p>
             <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
         </a>
