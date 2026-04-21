@@ -15,16 +15,22 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
+        
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric',
-            'image_url' => 'required|url',
+            'image_url' => 'required',
         ]);
+
+        $path = $request->file('image_url')->store('posts', 'public');
+
+        $validatedData['image_url'] = $path;
 
         Post::create($validatedData);
 
-        return redirect()->back()->with('success', 'Post created successfully!');
+        return redirect(route('posts.index'))->with('success', 'Post created successfully!');
     }
 
     public function destroy($id)
@@ -59,11 +65,11 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        return view('show', compact('post'));
+        return view('posts.show', compact('post'));
     }
 
     public function create()
     {
-        return view('create');
+        return view('posts.create');
     }
 }

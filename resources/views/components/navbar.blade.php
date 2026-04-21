@@ -30,6 +30,11 @@
             <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
         </a>
 
+        <a href="{{route('posts.create')}}" class="relative group">
+            <p class="text-[#FACFDD]">Subir nueva receta</p>
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
+        </a>
+
     </div>
 
 </nav>
