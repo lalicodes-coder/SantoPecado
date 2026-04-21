@@ -30,6 +30,7 @@
 - [ ] Validación de datos
 - [ ] Guardar pedidos en BD
 - [ ] Botón WhatsApp directo
+- [ ] Crear modelo tartas/posts
 
 ---
 

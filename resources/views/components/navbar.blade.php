@@ -1,7 +1,7 @@
-<nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+<nav class="bg-pink-900 shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
     <!-- LOGO -->
     <div class="flex items-center gap-2">
-        <span class="text-2xl font-bold text-[#FACFDD]">
+        <span class="text-2xl font-bold text-white">
             Santo Pecado
         </span>
     </div>
@@ -11,28 +11,25 @@
 
         <a href="/" 
            class="relative group">
-            Inicio
+            <p class="text-[#FACFDD]">Inicio</p>
+            <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
+        </a>
+
+        <a href="{{route('posts.index')}}" class="relative group">
+            <p class="text-[#FACFDD]">Tartas</p>
             <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
         </a>
 
         <a href="#" class="relative group">
-            Especialidades
+            <p class="text-[#FACFDD]">Especialidades</p>
             <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
         </a>
 
         <a href="#" class="relative group">
-            Contacto
+            <p class="text-[#FACFDD]">Contacto</p>
             <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-[#FACFDD] transition-all group-hover:w-full"></span>
         </a>
 
-    </div>
-
-    <!-- BOTÓN -->
-    <div>
-        <a href="#" 
-           class="bg-[#FACFDD] text-white px-5 py-2 rounded-full hover:opacity-90 transition text-sm">
-            Pedir
-        </a>
     </div>
 
 </nav>
